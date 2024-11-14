@@ -39,7 +39,7 @@ app.use(session({
 }));
 
 app.use(cors({
-    origin: 'https://frontend-gd50.onrender.com',
+    origin: process.env.CLIENT_ORIGIN,
     credentials: true, 
 }));
 
