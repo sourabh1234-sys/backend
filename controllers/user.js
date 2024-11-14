@@ -46,7 +46,7 @@ async function createUser(req, res) {
             case "emp":
                 user = await Emp.create({ username, email, loginId: hashedLoginId, role });
                 break;
-            case "salesmanager":
+            case "salemanger":
                 user = await SalesManager.create({ username, email, loginId: hashedLoginId, role });
                 break;
             default:  
