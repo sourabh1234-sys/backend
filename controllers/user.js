@@ -95,8 +95,10 @@ const LabourLogin = async (req, res) => {
 
 
 
-        const ip = req.ip;
-      const location = await getIpLocation(ip);
+
+    const ip = req.headers['x-forwarded-for'] || req.ip;
+    const location = await getIpLocation(ip);
+      
       if (location) {
         console.log(`User's location: Latitude ${location.latitude}, Longitude ${location.longitude}`);
         user.location = {
@@ -190,8 +192,8 @@ const UserLogin = async (req, res) => {
       
       if(role == "salemanger"){
 
-        const ip = req.ip;
-      const location = await getIpLocation(ip);
+    const ip = req.headers['x-forwarded-for'] || req.ip;
+    const location = await getIpLocation(ip);
       if (location) {
         console.log(`User's location: Latitude ${location.latitude}, Longitude ${location.longitude}`);
         user.location = {
