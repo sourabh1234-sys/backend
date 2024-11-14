@@ -39,7 +39,7 @@ app.use(session({
 }));
 
 app.use(cors({
-    origin: process.env.CLIENT_ORIGIN,
+    origin: '*',
     credentials: true, 
 }));
 
